@@ -5,13 +5,45 @@ the start, return an empty array.
 
 Examples:
 
-range(1, 5); // [1, 2, 3, 4]
-range(3, 4); // [3]
-range(7, 6); // []
 ***********************************************************************/
 
 
-// your code here
+// let range = (num, maxRange) => {
+
+//   let array = [];
+//   array.push(num)
+
+//   if (num === maxRange) {
+
+//   } else {
+
+//     return range(num += 1, maxRange)
+//   }
+
+//   return array;
+
+
+// }
+
+// console.log(range(1, 5)); // [1, 2, 3, 4]
+// console.log(range(3, 4)); // [3]
+// console.log(range(7, 6)); // []
+
+
+
+let range = function (num, maxRange) {
+
+  if (num >= maxRange) {
+    return [];  // <---- [2, 3, 4]
+  }
+
+  if (num < maxRange) {
+
+    return [num].concat(range(num += 1, maxRange));   // <--- [num] == [1]  then .concat combines [1] + [2, 3, 4]
+  }
+
+}
+
 
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
