@@ -24,9 +24,7 @@ let iceCreamShop = function (flavors, favorite) {
     return false;
   }
   let temp = flavors.slice(1)
-  if (temp === favorite) {
-    return true;
-  }
+
   return iceCreamShop(temp, favorite)
 }
 
