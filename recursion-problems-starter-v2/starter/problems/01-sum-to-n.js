@@ -23,6 +23,11 @@ Examples:
 
 // }
 
+console.log(sumToN(5)) // returns 15
+
+sumToN(1)  // returns 1
+sumToN(9)  // returns 45
+sumToN(-8)  // returns null
 ***********************************************************************/
 
 let sumToN = num => {
@@ -34,15 +39,15 @@ let sumToN = num => {
     return null;
 
   }
-  if (num === 0) { // <---- returning nothing
+  // if (num === 0) { //
 
-    return 0;
+  //   return 0;
 
-  }
+  // }
 
 
-  return num + sumToN(num - 1); // <--- returning undefined
-
+  return num + sumToN(num - 1);
+  // 5  + (4, 3, 2, 1)
 
 
 }
@@ -50,11 +55,6 @@ let sumToN = num => {
 
 
 
-console.log(sumToN(5)) // returns 15
-
-sumToN(1)  // returns 1
-sumToN(9)  // returns 45
-sumToN(-8)  // returns null
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
 try {
   module.exports = sumToN;
