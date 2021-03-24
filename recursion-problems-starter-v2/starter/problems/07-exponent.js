@@ -15,18 +15,18 @@ of the numerator:
 Examples:
 
 const sumArray = require("./02-sum-array");
-// if (power < 0) {
+4^-3 = (1/4) * (1/4) * (1/4) = 1/64.
+if (power < 0) {
   
-  //   if (power === 0) {
+    if (power === 0) {
     
-    //     return 1;
-    //   }
+        return 1;
+      }
     
-    //   return num * exponent(num, power + 1)
+      return num * exponent(num, power + 1)
     
-    4^-3 = (1/4) * (1/4) * (1/4) = 1/64.
 
-// }
+}
 ***********************************************************************/
 
 
