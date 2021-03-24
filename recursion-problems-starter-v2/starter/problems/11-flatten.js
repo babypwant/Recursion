@@ -7,20 +7,54 @@ Examples:
 
 ***********************************************************************/
 
-let flatten = (arr) => {
-  let nums = arr[0]
+// let flatten = (arr) => {
 
-  if (arr.length > 0) {
-    debugger;
-    return nums.concat(flatten(arr.shift()))
+//   let newArr = [];
+
+
+//   if (arr.length === 0) {
+//     return 1;
+//   }
+
+//   let start = arr.shift()
+
+//   let res = arr.slice(1);
+
+//   newArr.push(start)
+
+//   return flatten(res)
+
+
+// }
+
+let flatten = (arr) => {
+
+  let newArr = [];
+
+  for (let i = 0; i < arr.length; i++) {
+    let currentEl = arr[i]
+    if (Array.isArray(currentEl)) {
+
+      newArr.push(...flatten(currentEl))
+
+
+    } else {
+      newArr.push(currentEl);
+    }
+
   }
+
+  // let result = arr.flat(Infinity)
+
+  return newArr;
+
 
 }
 
 
-// flatten([]); // []
-// flatten([1, 2]); // [1, 2]
 console.log(flatten([1, [2, [3]]])); // [1, 2, 3]
+console.log(flatten([])); // []
+console.log(flatten([1, 2])); // [1, 2]
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
 try {
   module.exports = flatten;
