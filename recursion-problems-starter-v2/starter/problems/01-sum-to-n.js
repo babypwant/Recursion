@@ -39,12 +39,6 @@ let sumToN = num => {
     return null;
 
   }
-  // if (num === 0) { //
-
-  //   return 0;
-
-  // }
-
 
   return num + sumToN(num - 1);
   // 5  + (4, 3, 2, 1)
