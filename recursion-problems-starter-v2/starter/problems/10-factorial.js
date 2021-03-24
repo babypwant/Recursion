@@ -11,13 +11,23 @@ point, also sometimes called a "bang" in programming.
 
 Examples:
 
-factorial(1); // 1
-factorial(3); // 6
-factorial(5); // 120
 ***********************************************************************/
 
+let factorial = (n) => {
 
+  if (n === 0) {
 
+    return 1;
+
+  } else {
+    return n * factorial(n - 1)
+  }
+
+}
+
+// console.log(factorial(1)); // 1
+// console.log(factorial(3)); // 6
+// console.log(factorial(5)); // 120
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
 try {
   module.exports = factorial;
