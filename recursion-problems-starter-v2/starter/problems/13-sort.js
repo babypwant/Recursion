@@ -16,15 +16,70 @@ There are many ways to accomplish this task but here's a simple algorithm:
 
 Examples:
 
-sort([4,1,6,3,1,7]); // [1, 1, 3, 4, 6, 7]
-sort([0, 1, -3]); // [-3, 0, 1]
-sort([]); // []
 ***********************************************************************/
 
-function sort(nums, sorted = []) {
-  // your code here
-}
+// function sort(nums, sorted = []) {
 
+
+//   if (nums.length === 0) {
+//     return sorted;
+//   }
+
+//   for (let i = 0; i < nums.length; i++) {
+//     let currenNum = nums[i];
+//     let nextNum = nums[i + 1];
+//     if (nextNum < currenNum) {
+//       sorted.push(nextNum)
+//       sorted.push(currenNum)
+//     } else {
+
+//       sorted.push(currenNum)
+//     }
+
+
+//   }
+//   return sorted;
+
+// }
+
+function sort(nums, sorted = []) {
+
+  if (nums.length === 0) {
+
+    return sorted;
+
+  }
+
+  let index = 0;
+
+  let mininum = nums[0]
+
+  for (let i = 1; i < nums.length; i++) {
+
+    if (mininum > nums[i]) {
+
+      mininum = nums[i]
+
+      index = i;
+
+    }
+
+  }
+
+  sorted.push(mininum)
+
+  let half = nums.slice(0, index)
+
+  let secondHalf = nums.slice(index + 1)
+
+  return sort([...half, ...secondHalf], sorted)
+
+
+
+}
+console.log(sort([1, 4, 6, 3, 1, 7])); // [1, 1, 3, 4, 6, 7]
+sort([0, 1, -3]); // [-3, 0, 1]
+sort([]); // []
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
 try {
   module.exports = sort;
