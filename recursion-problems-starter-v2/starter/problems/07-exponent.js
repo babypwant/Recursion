@@ -15,15 +15,27 @@ of the numerator:
 
 Examples:
 
-exponent(3, 2); // 9
-exponent(2, -2); // 1/4 (or 0.25)
-exponent(5, 5); // 3125
+const sumArray = require("./02-sum-array");
 ***********************************************************************/
 
-function exponent(b, n) {
-  // your code here
+
+function exponent(num, power) {
+
+  if (power > 0) {
+
+
+  }
+
+
+  let sum = num * exponent(num, power - 1)
+
+
+
 }
-  
+
+console.log(exponent(3, 2)); // 9
+// exponent(2, -2); // 1/4 (or 0.25)
+// exponent(5, 5); // 3125
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
 try {
   module.exports = exponent;

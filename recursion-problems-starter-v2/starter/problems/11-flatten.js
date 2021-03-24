@@ -5,13 +5,22 @@ contents on one level.
 
 Examples:
 
-flatten([]); // []
-flatten([1, 2]); // [1, 2]
-flatten([1, [2, [3]]]); // [1, 2, 3]
 ***********************************************************************/
 
-// your code here
-  
+let flatten = (arr) => {
+  let nums = arr[0]
+
+  if (arr.length > 0) {
+    debugger;
+    return nums.concat(flatten(arr.shift()))
+  }
+
+}
+
+
+// flatten([]); // []
+// flatten([1, 2]); // [1, 2]
+console.log(flatten([1, [2, [3]]])); // [1, 2, 3]
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
 try {
   module.exports = flatten;
